@@ -1,4 +1,4 @@
-package domain;
+package com.example.gdsc.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -13,7 +13,7 @@ import java.util.List;
 @Table(name = "account")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="account_id",nullable = false)
     private Long accountId;
 

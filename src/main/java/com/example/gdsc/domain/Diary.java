@@ -1,4 +1,4 @@
-package domain;
+package com.example.gdsc.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -16,7 +16,7 @@ public class Diary {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "diary_id", nullable = false)
     private Long diaryId;
 
@@ -31,8 +31,9 @@ public class Diary {
     private Date diaryAt;
 
 
-    @Column(name = "emotion_type", nullable = false, length = 20)
-    private String emotionType;
+    @Enumerated(EnumType.STRING)
+    @Column(length = 20, nullable = false)
+    private Emotion emotionType;
 
 
     @ManyToOne(fetch = FetchType.LAZY)

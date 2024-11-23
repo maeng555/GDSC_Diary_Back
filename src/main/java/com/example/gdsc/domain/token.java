@@ -1,4 +1,4 @@
-package domain;
+package com.example.gdsc.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
